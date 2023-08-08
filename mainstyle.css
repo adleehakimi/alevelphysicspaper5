@@ -1,0 +1,89 @@
+
+body {
+    background-color: #e5e5e5;
+}
+
+h1 {
+    color: #5e5e5e;
+    text-align: center;
+    background-color: #d4d4d4;
+    margin : 0 auto;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #5e5e5e;
+    position: relative;
+    top: 100px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: Helvetica, sans-serif;
+    background-color: #d4d4d4;
+    padding: 10px 10px ;
+    margin: 0px 550px ;
+    height: 30px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.select-menu {
+    width: 380px;
+    margin: 150px auto;
+}
+
+.select-menu .select-btn {
+    display: flex;
+    height: 10px;
+    background-color: #d4d4d4;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #5e5e5e;
+}
+
+.select-menu ul.options li.options a {
+    color: #5e5e5e;
+    padding-top: 20px;
+}
+
+.select-btn i{
+    font-size: 25px;
+}
+
+.select-menu .options {
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #dedede;
+    display: none;
+    z-index: 999;
+    height: 40px;
+    border-bottom : solid;
+    border-color: #aaaaaa;
+    border-width: 0.1px;
+    padding-left: 65px;
+    padding-top: 0px;
+}   
+
+.select-menu:active .options, .select-menu:hover .options {
+    display: block;
+}
+
+.select-menu .select-btn ul.options {
+    display: none;
+    background-color: black;
+}
+
+.select-menu .select-btn span.sBtn-text {
+    text-align: center;
+}
