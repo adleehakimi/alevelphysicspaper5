@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="/static/calculate.css" rel="stylesheet">
+    <link href="static/fourth.css" rel="stylesheet">
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -67,31 +67,40 @@
       </div>
 
           <ul class="options">
-              <li class="options"><a href="{{ url_for('first') }}">GRADIENT AND Y-INTERCEPT IN VARIABLES</a></li>
-          </ul>
-
-          <ul class="options">
-              <li class="options"><a href="{{ url_for('second') }}">VALUES OF GRADIENT WITH UNCERTAINTIES</a></li>
-          </ul>
-
-          <ul class="options">
-              <li class="options"><a href="{{ url_for('third') }}">VALUES OF Y-INTERCEPT WITH UNCERTAINTIES</a></li>
-          </ul>
-
-          <ul class="options">
-            <li class="options"><a href="{{ url_for('fourth') }}">VALUES OF CONSTANTS WITH UNCERTAINTIES</a></li>
+            <li class="options"><a href="{{ url_for('first') }}">GRADIENT AND Y-INTERCEPT IN VARIABLES</a></li>
         </ul>
 
-          <ul class="options">
-            <li class="options"><a href="{{ url_for('fifth') }}">VALUES OF VARIABLES WITH CONDITIONS</a></li>
+        <ul class="options">
+            <li class="options"><a href="{{ url_for('second') }}">VALUES OF GRADIENT WITH UNCERTAINTIES</a></li>
         </ul>
 
+        <ul class="options">
+            <li class="options"><a href="{{ url_for('third') }}">VALUES OF Y-INTERCEPT WITH UNCERTAINTIES</a></li>
+        </ul>
+
+        <ul class="options">
+          <li class="options"><a href="{{ url_for('fourth') }}">VALUES OF CONSTANTS WITH UNCERTAINTIES</a></li>
       </ul>
+
+        <ul class="options">
+          <li class="options"><a href="{{ url_for('fifth') }}">VALUES OF VARIABLES WITH CONDITIONS</a></li>
+      </ul>
+
+      <ul class="options">
+        <li class="options"><a href="{{ url_for('main') }}">DISPLAY ALL</a></li>
+      </ul>
+
     </div>
 
     <div class="content">
+        <p>THE CONSTANTS:</p>
+        <div class="option">
+            <a class="one" href="{{ url_for('fourthy') }}">Y</a>
+        </div>
 
-
+        <div class="option">
+            <a class="two" href="{{ url_for('fourthz') }}">Z</a>
+        </div>
 
     </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="static/second.css" rel="stylesheet">
+    <link href="static/fourth-Y.css" rel="stylesheet">
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -65,7 +65,6 @@
       <div class="calculate-btn">
           <span class="cBtn-text">CALCULATE</span>
       </div>
-
           <ul class="options">
             <li class="options"><a href="{{ url_for('first') }}">GRADIENT AND Y-INTERCEPT IN VARIABLES</a></li>
         </ul>
@@ -86,50 +85,55 @@
           <li class="options"><a href="{{ url_for('fifth') }}">VALUES OF VARIABLES WITH CONDITIONS</a></li>
       </ul>
 
+        <ul class="options">
+          <li class="options"><a href="{{ url_for('main') }}">DISPLAY ALL</a></li>
+        </ul>
+
     </div>
 
     <div class="content">
-
-        <p>ENTER TWO COORDINATES BEST FIT LINE = </p>
-        <div class="input">
-            <p class="one"></p>
-        </div>
-        <p>ENTER TWO COORDINATES WORST FIT LINE = </p>
-        <div class="input">
-            <p class="two"></p>
-        </div>
-        <p>BEST FIT GRADIENT = </p>
-        <div class="input">
-            <p class="three"></p>
-        </div>
-        <p>WORST FIT GRADIENT =</p>
-        <div class="input">
-            <p class="four"></p>
-        </div>
-        <p>△GRADIENT =</p>
-        <div class="input">
-            <p class="five"></p>
+        <p>THE CONSTANTS:</p>
+        <div class="option">
+            <a class="one" href="{{ url_for('fourthy') }}">Y</a>
         </div>
 
+        <div class="option">
+            <a class="two" href="{{ url_for('fourthz') }}">Z</a>
+        </div>
+        <p id="line-one">SINCE GRADIENT = Yk/p,
+            Y = (GRADIENT x p) /k</p>
+        <p id="line-two">Given :</p>
+        <p id="line-three">p = (1.01 ± 0.01) x 10^5 Pa</p>   
+        <p id="line-four">k = 1.38 x 10^-23JK^-1</p>
+
+        <div class="prompt-input">
+            <p>GRADIENT = </p>
+            <p>△GRADIENT = </p>
+        </div>
+        <div class="input">
+        </div>
+        <div class="prompt-output">
+            <p>Y =</p>
+            <p>△Y =</p>
+        </div>
+        <div class="output">
+            <p id="output-one"></p>
+            <p id="output-two"></p>
+        </div>
     </div>
+
     {% block content %}
 
-    <form method="POST" action="{{ url_for('second') }}"> 
-        <input type="number" placeholder="x_1" id="x_1" name="x_1" step="any" required>
-        <input type="number" placeholder="y_1" id="y_1" name="y_1" step="any" required>
-        <input type="number" placeholder="x_2" id="x_2" name="x_2" step="any" required>
-        <input type="number" placeholder="y_2" id="y_2" name="y_2" step="any" required>
-        <input type="number" placeholder="x_3" id="x_3" name="x_3" step="any" required>
-        <input type="number" placeholder="y_3" id="y_3" name="y_3" step="any" required>
-        <input type="number" placeholder="x_4" id="x_4" name="x_4" step="any" required>
-        <input type="number" placeholder="y_4" id="y_4" name="y_4" step="any" required>
+    <form method="POST" action="{{ url_for('fourthy') }}"> 
+        <input type="number" placeholder="△gradient" id="mbfl" name="dm" step="any" required>
+        <input type="number" placeholder="gradient" id="dm" name="mbfl" step="any" required>
         <input type="submit" placeholder="calculate" id="submit" value="calculate">
     </form>
 
-    <p id="bfl">{{bfl}}</p>
-    <p id="wfl">{{wfl}}</p>
-    <p id="dm">{{dm}}</p>
+    <p id="Y">{{Y}}</p>
+    <p id="dY">{{dY}}</p>
 
     {% endblock content %}
+
   </body>
 </html>

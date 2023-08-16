@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="static/main.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>A-Level Physics Paper 5 Question 2 Calculator - 9702 52 MJ 2023</title>
+    <h1>A-Level Physics Paper 5 Question 2 Calculator </h1>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <div class="select-menu">
+      <div class="select-btn">
+          <span class="sBtn-text">9702 52 MJ 2023</span>
+      </div>
+    </div>
+
+    <h4 class="formula">FORMULA GIVEN : pV= Yk(θ+Z)</h4>
+
+    <div class="calculate-menu">
+      <div class="calculate-btn">
+          <span class="cBtn-text">CALCULATE</span>
+      </div>
+          <ul class="options">
+            <li class="options"><a href="{{ url_for('first') }}">GRADIENT AND Y-INTERCEPT IN VARIABLES</a></li>
+        </ul>
+
+        <ul class="options">
+            <li class="options"><a href="{{ url_for('second') }}">VALUES OF GRADIENT WITH UNCERTAINTIES</a></li>
+        </ul>
+
+        <ul class="options">
+            <li class="options"><a href="{{ url_for('third') }}">VALUES OF Y-INTERCEPT WITH UNCERTAINTIES</a></li>
+        </ul>
+
+        <ul class="options">
+          <li class="options"><a href="{{ url_for('fourth') }}">VALUES OF CONSTANTS WITH UNCERTAINTIES</a></li>
+      </ul>
+
+        <ul class="options">
+          <li class="options"><a href="{{ url_for('fifth') }}">VALUES OF VARIABLES WITH CONDITIONS</a></li>
+      </ul>
+
+      <ul class="options">
+        <li class="options"><a href="{{ url_for('main') }}">DISPLAY ALL</a></li>
+    </ul>
+
+      </ul>
+    </div>
+
+    <div class="content">
+
+        <div class="content-one">
+            <p>GRADIENT =</p>
+            <div class="output">
+                <p class="one">Yk/p</p>
+            </div>
+            <p>Y-INTERCEPT =</p>
+            <div class="output">
+                <p class="two">YkZ/p</p>
+            </div>
+        </div>
+
+        <div class="content-two">
+
+            <p>ENTER TWO COORDINATES BEST FIT LINE = </p>
+            <div class="input">
+                <p class="one"></p>
+            </div>
+            <p>ENTER TWO COORDINATES WORST FIT LINE = </p>
+            <div class="input">
+                <p class="two"></p>
+            </div>
+            <p>BEST FIT GRADIENT = </p>
+            <div class="input">
+                <p class="three"></p>
+            </div>
+            <p>WORST FIT GRADIENT =</p>
+            <div class="input">
+                <p class="four"></p>
+            </div>
+            <p>△GRADIENT =</p>
+            <div class="input">
+                <p class="five"></p>
+            </div>
+        </div>
+
+        <div class="content-three">
+
+            <p>ENTER TWO COORDINATES =</p>
+            <div class="input">
+                <p class="one"></p>
+            </div>
+            <p>ENTER BEST FIT LINE GRADIENT =</p>
+            <div class="input">
+                <p class="two"></p>
+            </div>
+            <p>ENTER WORST FIT LINE GRADIENT =</p>
+            <div class="input">
+                <p class="three"></p>
+            </div>
+    
+            <p>Y-INTERCEPT =</p>
+            <div class="input">
+                <p class="four"></p>
+            </div>
+            <p>△Y-INTERCEPT =</p>
+            <div class="input">
+                <p class="five"></p>
+            </div>
+
+            <div class="content-four">
+
+                <p id="line-one">SINCE GRADIENT = Yk/p,
+                    Y = (GRADIENT x p) /k</p>
+                <p id="line-two">Given :</p>
+                <p id="line-three">p = (1.01 ± 0.01) x 10^5 Pa</p>   
+                <p id="line-four">k = 1.38 x 10^-23JK^-1</p>
+        
+                <div class="prompt-input">
+                    <p>GRADIENT = </p>
+                    <p>△GRADIENT = </p>
+                </div>
+                <div class="input">
+                </div>
+                <div class="prompt-output">
+                    <p>Y =</p>
+                    <p>△Y =</p>
+                </div>
+                <div class="output">
+                    <p id="output-one"></p>
+                    <p id="output-two"></p>
+                </div>
+
+            </div>
+
+            <div class="content-five">
+
+                <p id="line-one">SINCE Y-INTERCEPT = GRADIENT x Z
+                    Z = Y-INTERCEPT/GRADIENT</p>
+                  <p id="line-two">Given :</p>
+                  <p id="line-three">p = (1.01 ± 0.01) x 10^5 Pa</p>   
+                  <p id="line-four">k = 1.38 x 10^-23JK^-1</p>
+          
+                  <div class="prompt-input">
+                      <p>Y-INTERCEPT =</p>
+                      <p>△Y-INTERCEPT =</p>
+                      <p>GRADIENT =</p>
+                      <p>△GRADIENT =</p>
+                  </div>
+                  <div class="input">
+                      <p id="input-one"></p>
+                      <p id="input-two"></p>
+                      <p id="input-three"></p>
+                      <p id="input-four"></p>
+                  </div>
+                  <div class="prompt-output">
+                      <p>Z =</p>
+                      <p>△Z =</p>
+                  </div>
+                  <div class="output">
+                      <p id="output-one"></p>
+                      <p id="output-two"></p>
+                  </div>
+
+            </div>
+
+            <div class="content-six">
+                <p>THE VARIABLE: θ</p>
+                <div class="option">
+                    <a class="one" href="#">b</a>
+                </div>
+
+                <p id="line-one">V = πd^4 /4, θ= (pV/Yk) - Z</p>
+                <p id="line-two">Given :</p>
+                <p id="line-three">p = (1.01 ± 0.01) x 10^5 Pa</p>   
+                <p id="line-four">k = 1.38 x 10^-23JK^-1</p>
+                <p id="line-five">d = (27.9 ± 0.1) mm</p>
+
+                <div class="prompt-input">
+                    <p>Y =</p>
+                    <p>Z =</p>
+                </div>
+                <div class="input">
+                    <p id="input-two"></p>
+                    <p id="input-three"></p>
+                </div>
+                <div class="prompt-output">
+                    <p>θ =</p>
+                </div>
+                <div class="output">
+                    <p id="output-one"></p>
+                </div>
+            </div>
+
+            <div class="divider-1">
+                {% block content %}
+
+                <form method="POST" action="{{ url_for('main') }}"> 
+                    <input type="number" placeholder="x_1" id="x_1_1" name="x_1_1" step="any" required>
+                    <input type="number" placeholder="y_1" id="y_1_1" name="y_1_1" step="any" required>
+                    <input type="number" placeholder="x_2" id="x_2_1" name="x_2_1" step="any" required>
+                    <input type="number" placeholder="y_2" id="y_2_1" name="y_2_1" step="any" required>
+                    <input type="number" placeholder="x_3" id="x_3_1" name="x_3_1" step="any" required>
+                    <input type="number" placeholder="y_3" id="y_3_1" name="y_3_1" step="any" required>
+                    <input type="number" placeholder="x_4" id="x_4_1" name="x_4_1" step="any" required>
+                    <input type="number" placeholder="y_4" id="y_4_1" name="y_4_1" step="any" required>
+                    <input type="submit" placeholder="calculate" id="submit" value="calculate", name="submit1">
+                </form>
+
+                <p id="bfl" placeholder="answer" name="answer">{{bfl_1}}</p>
+                <p id="wfl">{{wfl_1}}</p>
+                <p id="dm">{{dm_1}}</p>
+
+                {% endblock content %}
+    
+            </div>
+
+            <div class="divider-2">
+
+
+                <form method="POST" action="{{ url_for('main') }}"> 
+                    <input type="number" placeholder="x_1" id="x_1_2" name="x_1_2" step="any" required>
+                    <input type="number" placeholder="y_1" id="y_1_2" name="y_1_2" step="any" required>
+                    <input type="number" placeholder="BFL gradient" id="mbfl_2" name="mbfl_2" step="any" required>
+                    <input type="number" placeholder="WFL gradient" id="mwfl_2" name="mwfl_2" step="any" required>
+                    <input type="submit" placeholder="calculate" id="submit" value="calculate" name="submit2">
+                </form>
+
+                <p id="y_intercept_bfl">{{y_intercept_bfl_2}}</p>
+                <p id="dy_intercept">{{dy_intercept_2}}</p>
+
+
+            </div>
+
+            <div class="divider-3">
+
+                <form method="POST" action="{{ url_for('main') }}"> 
+                    <input type="number" placeholder="△gradient" id="mbfl_3" name="dm_3" step="any" required>
+                    <input type="number" placeholder="gradient" id="dm_3" name="mbfl_3" step="any" required>
+                    <input type="submit" placeholder="calculate" id="submit" value="calculate" name="submit3">
+                </form>
+            
+                <p id="Y">{{Y_3}}</p>
+                <p id="dY">{{dY_3}}</p>
+
+            </div>
+
+            <div class="divider-4">
+
+                <form method="POST" action="{{ url_for('main')}}"> 
+                    <input type="number" placeholder="y-intercept" id="y_intercept_4" name="y_intercept_4" step="any" required>
+                    <input type="number" placeholder="△y-intercept" id="dy_intercept_4" name="dy_intercept_4" step="any" required>
+                    <input type="number" placeholder="gradient" id="mbfl_4" name="mbfl_4" step="any" required>
+                    <input type="number" placeholder="△gradient" id="dm_4" name="dm_4" step="any" required>
+                    <input type="submit" placeholder="calculate" id="submit" value="calculate" name="submit4">
+                </form>
+            
+                <p id="Z_4">{{Z_4}}</p>
+                <p id="dZ_4">{{dZ_4}}</p>
+
+            </div>
+
+            <div class="divider-5">
+
+                <form method="POST" action="{{ url_for('main')}}"> 
+                    <input type="number" placeholder="Y" id="Y_5" name="Y_5" step="any" required>
+                    <input type="number" placeholder="Z" id="Z_5" name="Z_5" step="any" required>
+                    <input type="submit" placeholder="calculate" id="submit" value="calculate" name="submit5">
+                </form>
+            
+                <p id="temperature">{{temperature}}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="static/fifth.css" rel="stylesheet">
+    <link href="static/third.css" rel="stylesheet">
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -86,45 +86,52 @@
           <li class="options"><a href="{{ url_for('fifth') }}">VALUES OF VARIABLES WITH CONDITIONS</a></li>
       </ul>
 
+      <ul class="options">
+        <li class="options"><a href="{{ url_for('main') }}">DISPLAY ALL</a></li>
+      </ul>
+
+
+      </ul>
     </div>
 
     <div class="content">
-        <p>THE VARIABLE:</p>
-        <div class="option">
-            <a class="one" href="#">θ</a>
-        </div>
 
-        <p id="line-one">V = πd^4 /4, θ= (pV/Yk) - Z</p>
-        <p id="line-two">Given :</p>
-        <p id="line-three">p = (1.01 ± 0.01) x 10^5 Pa</p>   
-        <p id="line-four">k = 1.38 x 10^-23JK^-1</p>
-        <p id="line-five">d = (27.9 ± 0.1) mm</p>
-
-        <div class="prompt-input">
-            <p>Y =</p>
-            <p>Z =</p>
-        </div>
+        <p>ENTER TWO COORDINATES =</p>
         <div class="input">
-            <p id="input-two"></p>
-            <p id="input-three"></p>
+            <p class="one"></p>
         </div>
-        <div class="prompt-output">
-            <p>θ =</p>
+        <p>ENTER BEST FIT LINE GRADIENT =</p>
+        <div class="input">
+            <p class="two"></p>
         </div>
-        <div class="output">
-            <p id="output-one"></p>
+        <p>ENTER WORST FIT LINE GRADIENT =</p>
+        <div class="input">
+            <p class="three"></p>
         </div>
+
+        <p>Y-INTERCEPT =</p>
+        <div class="input">
+            <p class="four"></p>
+        </div>
+        <p>△Y-INTERCEPT =</p>
+        <div class="input">
+            <p class="five"></p>
+        </div>
+
     </div>
 
     {% block content %}
 
-    <form method="POST" action="{{ url_for('fifth') }}"> 
-        <input type="number" placeholder="Y" id="Y" name="Y" step="any" required>
-        <input type="number" placeholder="Z" id="Z" name="Z" step="any" required>
+    <form method="POST" action="{{ url_for('third') }}"> 
+        <input type="number" placeholder="x_1" id="x_1" name="x_1" step="any" required>
+        <input type="number" placeholder="y_1" id="y_1" name="y_1" step="any" required>
+        <input type="number" placeholder="BFL gradient" id="mbfl" name="mbfl" step="any" required>
+        <input type="number" placeholder="WFL gradient" id="mwfl" name="mwfl" step="any" required>
         <input type="submit" placeholder="calculate" id="submit" value="calculate">
     </form>
 
-    <p id="temperature">{{temperature}}</p>
+    <p id="y_intercept_bfl">{{y_intercept_bfl}}</p>
+    <p id="dy_intercept">{{dy_intercept}}</p>
 
     {% endblock content %}
 
